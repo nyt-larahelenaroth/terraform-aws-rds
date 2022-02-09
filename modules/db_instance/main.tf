@@ -65,7 +65,9 @@ resource "aws_db_instance" "this" {
   performance_insights_retention_period = var.performance_insights_enabled ? var.performance_insights_retention_period : null
   performance_insights_kms_key_id       = var.performance_insights_enabled ? var.performance_insights_kms_key_id : null
 
-  replicate_source_db     = var.replicate_source_db
+  replicate_source_db = var.replicate_source_db
+  replica_mode        = var.replica_mode
+
   backup_retention_period = var.backup_retention_period
   backup_window           = var.backup_window
   max_allocated_storage   = var.max_allocated_storage

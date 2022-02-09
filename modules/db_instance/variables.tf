@@ -39,6 +39,12 @@ variable "replicate_source_db" {
   default     = null
 }
 
+variable "replica_mode" {
+  type        = string
+  description = "Oracle instances specifies replica is mounted or open-read-only. Mounted does not accept user connections and is mainly used for cross-region DR. Read-only incorporates the ACtive Data Guard and applies changes from the source instance to all read replicas."
+  default     = null
+}
+
 variable "license_model" {
   description = "License model information for this DB instance. Optional, but required for some DB engines, i.e. Oracle SE1"
   type        = string
